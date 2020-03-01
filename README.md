@@ -1,286 +1,110 @@
-# Spotify iOS SDK
+<img src="https://developer.spotify.com/images/logos/s4d/black.svg" width="300" />
 
-## Overview
+# Spotify Web Playback SDK
 
-The Spotify iOS framework allows your application to interact with the Spotify app running in the background on a user's device. Capabilities include authorizing, getting metadata for the currently playing track and context, as well as issuing playback commands.
+This GitHub repository acts as the public issue tracker for the [Spotify Web Playback SDK].
 
-**Please Note:** By using Spotify developer tools you accept our [Developer Terms of Use](https://beta.developer.spotify.com/terms/).
+[Spotify for Developers] 🌈 | [Web Playback SDK Documentation][Spotify Web Playback SDK] 📖 | [Web Playback SDK Demo][Spotify Web Playback SDK Demo] ⌨️
 
-The Spotify iOS SDK is a set of lightweight objects that connect with the Spotify app and let you control it while all the heavy lifting of playback is offloaded to the Spotify app itself. The Spotify app takes care of playback, networking, offline caching and OS music integration, leaving you to focus on your user experience.  Moving from your app to the Spotify app and vice versa is a streamlined experience where playback and metadata always stay in sync.
+## Table of Contents
 
-[Key Features](#key-features)
+- [Open issues](#open-issues)
+- [Creating an issue](#creating-an-issue)
+- [Frequently asked questions](#frequently-asked-questions)
+- [Other developer support forums](#other-developer-support-forums)
+- [Stay tuned in](#stay-tuned-in)
 
-[Filing Bugs](#filing-bugs)
+## Open issues
 
-[Components](#components)
+[New Open Issues] | [Open Bugs][bug] | [Open Suggestions][suggestion] | [Open Documentation Requests][documentation] | [Open Questions][question]
 
-[How Do App Remote Calls Work?](#how-do-app-remote-calls-work)
+If you want to show your support for suggestions or requests, please add a [thumbs up reaction](https://github.com/blog/2119-add-reactions-to-pull-requests-issues-and-comments) instead of commenting “*+1*”. This way the reporter and other commenters doesn't get bombarded with notifications.
 
-[Terms of Use](#terms-of-use)
+## Creating an issue
 
-[Tutorial](#tutorial)
+If you’ve found a bug in the Web Playback SDK, or have ideas on how we could improve it, please [create a GitHub issue and fill out the required information][New GitHub Issue]. It’s greatly appreciated.
 
-[Frequently Asked Questions](#frequently-asked-questions)
+We will triage the request and mark it as one of the following types:
 
-### Key Features
+- <kbd>[bug]</kbd> — Unexpected behaviour relating to the Web Playback SDK that can be reproduced by Spotify.
+- <kbd>[suggestion]</kbd> — Requests for additional functionality or changes in the Web Playback SDK that has been acknowledged by Spotify.
+- <kbd>[documentation]</kbd> — Requests for changes to documentation that has been acknowledged by Spotify.
+- <kbd>[question]</kbd> — Relates to the Web Playback SDK, but does not fit into the above categories.
 
-* Playback is always in sync with Spotify app
-* Playback, networking, and caching is all accounted for by the Spotify app
-* Works offline and online and does not require Web API calls to get metadata for player state
-* Allows authentication through the Spotify app so users don't have to type in their credentials
+Depending on the outcome, we will mark it as the following status:
 
-### Filing Bugs
+- <kbd>[wontfix]</kbd> — We will close the issue, as this isn’t expected to be considered in the next 6 months. Any progress in the future will be posted on respective issues even after it is closed.
+- <kbd>[offtopic]</kbd> — We will close this issue, as this does not relate specifically to the Web Playback SDK. Where possible, we will direct you to the correct issue tracker / location.
+- <kbd>[duplicate]</kbd> — We will close the issue, as this has already been asked and to consolidate all discussions. We will reference the respective issues to guide you and any other visitors to a single issue for updates.
+- <kbd>[more info needed]</kbd> — We require more information from the reporter in order to make progress. We will close it if no response is made within 2 weeks.
+- <kbd>[inactive]</kbd> — The issue requires more information and has received no engagement after some period of time, and we will close the issue. If reporter wishes to raise issue at a later point, they can create a new issue and reference.
 
-We love feedback from the developer community, so please feel free to file missing features or bugs over at our [issue tracker](https://github.com/spotify/ios-app-remote-sdk/issues).
-Make sure you search existing issues before creating new ones.
+## Frequently asked questions
 
-[Open bug tickets](https://github.com/spotify/ios-app-remote-sdk/labels/bug) | [Open feature requests](https://github.com/spotify/ios-app-remote-sdk/labels/feature%20request)
+#### I have an issue with other Spotify APIs and SDKs. Can I post them here?
+Unfortunately not; this issue tracker is only for the Spotify Web Playback SDK. For bugs and requests related to other Spotify APIs and SDKs, please visit the respective issue trackers on GitHub:
 
-### Requirements
+- [spotify/web-api]
+- [spotify/web-api-auth-examples]
+- [spotify/web-playback-sdk]
+- [spotify/ios-sdk]
+- [spotify/android-sdk]
+- [spotify/ios-app-remote-sdk]
+- [spotify/android-app-remote-sdk]
+- [spotify/android-auth]
 
-The Spotify iOS framework requires a deployment target of iOS 9 or higher. The
-following architectures are supported: `armv7`, `armv7s` and `arm64` for devices,
-`i386` and `x86_64` for the iOS Simulator. Bitcode is also supported.
+#### I have a non-technical issue with Spotify. Is this the right place to post them?
+Unfortunately not; our GitHub issue trackers do not provide support for non-technical Spotify questions. Please submit these in our official [Community Forums]. Posting them here will result in them being closed as <kbd>[offtopic]</kbd>.
 
-## Components
+#### I’m an official Spotify partner and I have a technical question. Is this the right place to post them?
+This repository only deals with the public-facing Web Playback SDK. Partnership-specific questions don’t belong here as this is a public forum; please contact your Spotify partner manager.
 
-### Models
+#### How long does it take for my issue to be addressed?
+Typically, we aim to start investigating all new issues within one week (except during holiday periods). 
 
-* `SPTAppRemoteAlbum`
-* `SPTAppRemoteArtist`
-* `SPTAppRemoteLibraryState`
-* `SPTAppRemotePlaybackRestrictions`
-* `SPTAppRemotePlaybackOptions`
-* `SPTAppRemotePlayerState`
-* `SPTAppRemoteTrack`
-* `SPTAppRemoteContentItem`
-* `SPTAppRemoteUserCapabilities`
-* `SPTAppRemoteImageRepresentable`
-* `SPTConfiguration`
+#### How do I get my feature request added?
+Given the scale of Spotify, not all feature requests can be added. It’s important to note that all feedback is extremely valued and whilst we have implemented many suggestions from the community, we cannot make any guarantees for suggestions.
 
-### SPTAppRemote
+#### Why was my issue closed?
+All of the reasons issues might be closed are mentioned in [Creating an issue](#creating-an-issue) above, which will explain the whole process better.
 
-The main entry point to connect to the Spotify app and retrieve API components. Use this to establish, monitor, and terminate the connection.
+## Other developer support forums
 
-### SPTAppRemotePlayerAPI
+Our issue trackers on GitHub is the official developer support channel for Spotify. There are, however, other community programming forums you can share your issues on:
 
-Send playback related commands such as:
+- **[Stack Overflow]** — Mark your issues under the <code>spotify</code> tag. Though we do occasionally answer questions there, this is not an official developer support channel for Spotify.
 
-* Play track by URI
-* Resume/pause playback
-* Skip forwards and backwards
-* Seek to position
-* Set shuffle on/off
-* Request player state
-* Request player context
-* Subscribe to player state
+## Stay tuned in
+For Spotify developer-related announcements, follow [@SpotifyPlatform] on Twitter, visit our [Developer Blog], or subscribe to our [Developer Newsletter].
 
-### SPTAppRemoteImagesAPI
+[Spotify for Developers]: https://developer.spotify.com
+[Spotify Web Playback SDK]: https://developer.spotify.com/documentation/web-playback-sdk/
+[Spotify Web Playback SDK Demo]: https://spotify-web-playback.glitch.me
+[Community Forums]: https://community.spotify.com
+[@SpotifyPlatform]: https://twitter.com/SpotifyPlatform
+[Developer Blog]: https://developer.spotify.com/community/news/
+[Developer Newsletter]: http://eepurl.com/Z2qfn
+[Stack Overflow]: https://stackoverflow.com/tags/spotify
 
-Fetch an image for a `SPTAppRemoteImageRepresentable`
+[New GitHub Issue]: https://github.com/spotify/web-playback-sdk/issues/new
+[New Open Issues]: https://github.com/spotify/web-playback-sdk/issues?q=is%3Aopen+is%3Aissue+no%3Alabel
 
-### SPTAppRemoteUserAPI
+[spotify/web-api]: https://github.com/spotify/web-api/issues
+[spotify/web-api-auth-examples]: https://github.com/spotify/web-api-auth-examples/issues
+[spotify/web-playback-sdk]: https://github.com/spotify/web-playback-sdk/issues
+[spotify/ios-sdk]: https://github.com/spotify/ios-sdk/issues
+[spotify/android-sdk]: https://github.com/spotify/android-sdk/issues
+[spotify/ios-app-remote-sdk]: https://github.com/spotify/ios-app-remote-sdk/issues
+[spotify/android-app-remote-sdk]: https://github.com/spotify/android-app-remote-sdk/issues
+[spotify/android-auth]: https://github.com/spotify/android-auth/issues
 
-Fetch/subscribe/set user-related data such as:
-
-* Fetch and/or subscribe to `SPTAppRemoteUserCapabilities`
-* Determine if a user can play songs on demand (Premium vs Free)
-* Add/remove/check if a song is in a user's library
-
-### SPTAppRemoteContentAPI
-
-Fetch recommended content for the user.
-
-## How App Remote calls work
-
-When you interact with any of the App Remote APIs you pass in a `SPTAppRemoteCallback` block that gets invoked with either the expected result item or an `NSError` if the operation failed. The block is triggered after the command was received by the Spotify app (or if the connection could not be made).
-
-Here is an example using the `SPTRemotePlayerAPI` to skip a song:
-
-```objective-c
-[appRemote.playerAPI skipToNext:^(id  _Nullable result, NSError * _Nullable error) {
-    if (error) {
-        // Operation failed
-    } else {
-        // Operation succeeded
-    }
-}];
-```
-
-### Tutorial and Examples
-
-We provide a few sample projects to help you get started with the iOS Framework in the DemoProjects folder. See the [Readme](DemoProjects/README.md) in the DemoProjects folder for more information on what each sample does.
-
-### Authentication and Authorization
-
-To communicate with the Spotify app your application will need to get a user's permission to control playback first by using built-in authorization for App Remote. To do that you will need to request authorization view when connecting to Spotify. The framework will automatically request the `app-remote-control` scope and show the auth view if user hasn't agreed to it yet.
-
-## Terms of Use
-
-Note that by using Spotify developer tools, you accept our [Developer Terms of Use](https://beta.developer.spotify.com/terms/).
-
-### Included Open Source Libraries
-
-* [MPMessagePack](https://github.com/gabriel/MPMessagePack)
-
-## Tutorial
-
-This tutorial leads you step-by-step through the creation of a simple app that uses the Spotify iOS SDK to play an audio track and subscribe to player state. It will walk through the authorization flow.
-
-### Prepare Your Environment
-
-Follow these steps to make sure you are prepared to start coding.
-
-* Download the Spotify iOS framework from the "Clone or download" button at the top of this page, and unzip it.
-* Install the latest version of Spotify from the App Store onto the device you will be using for development. Run the Spotify app and login or sign up.
-**Note:** A **Spotify Premium** account will be required to play a track on-demand for a uri.
-* [Register Your Application](https://beta.developer.spotify.com/documentation/general/guides/app-settings/#register-your-app). You will need to register your application at [My Applications](https://beta.developer.spotify.com/dashboard/) and obtain a client ID. When you register your app you will also need to whitelist a redirect URI that the Spotify app will use to callback to your app after authorization.
-
-### Add Dependencies
-
-1. Add the `SpotifyiOS.framework` to your Xcode project.
-
-    ![Import SpotifyiOS.framework](img/import_sdk.png)
-
-2. In your info.plist add your redirect URI you registered at [My Applications](https://beta.developer.spotify.com/dashboard/). You will need to add your redirect URI under "URL types" and "URL Schemes". Be sure to set a unique "URL identifier" as well. [More info on URL Schemes](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html#//apple_ref/doc/uid/TP40007072-CH6-SW1)
-
-    ![Info.plist](img/info_plist.png)
-
-3. Add `#import <SpotifyiOS/SpotifyiOS.h>` to your source files to import necessary headers.
-
-### Check if Spotify is Active
-
-If a user is already using Spotify, but has not authorized your application, you can use the following check to prompt them to
-start the authorization process.
-
-```objective-c
-[SPTAppRemote checkIfSpotifyAppIsActive:^(BOOL active) {
-    if (active) {
-        // Prompt the user to connect Spotify here
-    }
-}];
-```
-
-### Authorize Your Application
-
-To be able to use the playback control part of the SDK the user needs to authorize your application. If they haven't, the connection will fail with a `No token provided` error. To allow the user to authorize your app, you can use the built-in authorization flow.
-
-1. Initialize `SPTConfiguration` with your client ID and redirect URI.
-
-    ```objective-c
-    SPTConfiguration *configuration =
-        [[SPTConfiguration alloc] initWithClientID:@"your_client_id" redirectURL:[NSURL urlWithString:@"your_redirect_uri"]];
-    ```
-
-2. Initialize `SPTAppRemote` with your `SPTConfiguration`
-
-    ```objective-c
-    self.appRemote = [[SPTAppRemote alloc] initWithConfiguration:configuration logLevel:SPTAppRemoteLogLevelDebug];
-    ```
-
-3. Initiate the authentication flow (for other ways to detect if Spotify is installed, as well as attributing installs, please see our [Content Linking Guide](https://beta.developer.spotify.com/documentation/general/guides/content-linking-guide/)).
-
-    ```objective-c
-    // Note: A blank string will play the user's last song or pick a random one.
-    BOOL spotifyInstalled = [self.appRemote authorizeAndPlayURI:@"spotify:track:69bp2EbF7Q2rqc5N3ylezZ"];
-    if (!spotifyInstalled) {
-        /*
-        * The Spotify app is not installed.
-        * Use SKStoreProductViewController with [SPTAppRemote spotifyItunesItemIdentifier] to present the user
-        * with a way to install the Spotify app.
-        */
-    }
-    ```
-
-4. Configure your `AppDelegate` to parse out the accessToken in `application:openURL:options:` and set it on the `SPTAppRemote` connectionParameters.
-
-    ```objective-c
-    - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
-    {
-        NSDictionary *params = [self.appRemote authorizationParametersFromURL:url];
-        NSString *token = params[SPTAppRemoteAccessTokenKey];
-        if (token) {
-            self.appRemote.connectionParameters.accessToken = token;
-        } else if (params[SPTAppRemoteErrorDescriptionKey]) {
-            NSLog(@"%@", params[SPTAppRemoteErrorDescriptionKey]);
-        }
-        return YES;
-    }
-    ```
-
-    If you are using UIScene then you need to use appropriate method in your scene delegate.
-
-    ```swift
-    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        guard let url = URLContexts.first?.url else {
-            return
-        }
-
-        let parameters = appRemote.authorizationParameters(from: url);
-
-        if let access_token = parameters?[SPTAppRemoteAccessTokenKey] {
-            appRemote.connectionParameters.accessToken = access_token
-            self.accessToken = access_token
-        } else if let error_description = parameters?[SPTAppRemoteErrorDescriptionKey] {
-            // Show the error
-        }
-    }
-    ```
-
-### Connect and Subscribe to Player State
-
-1. Set your connection delegate and attempt to connect.
-
-    ```objective-c
-    self.appRemote.delegate = self;
-    [self.appRemote connect];
-    ```
-
-    ```objective-c
-
-    - (void)appRemoteDidEstablishConnection:(SPTAppRemote *)appRemote
-    {
-        // Connection was successful, you can begin issuing commands
-    }
-
-    - (void)appRemote:(SPTAppRemote *)appRemote didFailConnectionAttemptWithError:(NSError *)error
-    {
-        // Connection failed
-    }
-
-    - (void)appRemote:(SPTAppRemote *)appRemote didDisconnectWithError:(nullable NSError *)error
-    {
-        // Connection disconnected
-    }
-    ```
-
-2. Set a delegate and subscribe to player state:
-
-    ```objective-c
-    appRemote.playerAPI.delegate = self;
-
-    [appRemote.playerAPI subscribeToPlayerState:^(id  _Nullable result, NSError * _Nullable error) {
-        // Handle Errors
-    }];
-    ```
-
-    ```objective-c
-    - (void)playerStateDidChange:(id<SPTAppRemotePlayerState>)playerState
-    {
-        NSLog(@"Track name: %@", playerState.track.name);
-    }
-    ```
-
-## Frequently Asked Questions
-
-**Why does music need to be playing to connect with `SPTAppRemote`?**
-
-Music must be playing when you connect with `SPTAppRemote` to ensure the Spotify app is not suspended in the background. iOS applications can only stay active in the background for a few seconds unless they are actively doing something like navigation or playing music.
-
-**Is SpotifyiOS.framework thread safe?**
-
-No, the framework currently expects to be called from the main thread. It will offload most of its work to a background thread internally but callbacks to your code will also occur on the main thread.
-
-**What if I need to authorize without starting playback?**
-
-There is an alternative authorization method. You can find more information about that [here](docs/auth.md).
+[bug]: https://github.com/spotify/web-api/labels/bug
+[suggestion]: https://github.com/spotify/web-api/labels/suggestion
+[documentation]: https://github.com/spotify/web-api/labels/documentation
+[question]: https://github.com/spotify/web-api/labels/question
+
+[wontfix]: https://github.com/spotify/web-api/labels/wontfix
+[offtopic]: https://github.com/spotify/web-api/labels/offtopic
+[duplicate]: https://github.com/spotify/web-api/labels/duplicate
+[more info needed]: https://github.com/spotify/web-api/labels/more%20info%20needed
+[inactive]: https://github.com/spotify/web-api/labels/inactive
